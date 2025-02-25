@@ -1,0 +1,70 @@
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+const questions = [
+  { question: "Where was I born?", options: ["Eritrea, Asmara", "Maryland", "Texas"], answer: "Eritrea, Asmara" },
+  { question: "When was I born?", options: ["2009", "2010", "2011"], answer: "2010" },
+  { question: "What is an important event in my life?", options: ["Got my first PlayStation", "Moved to a new school", "Both"], answer: "Both" },
+  { question: "Who was my least favorite teacher?", options: ["Mr. Tefera", "Mr. Smith", "Ms. Johnson"], answer: "Mr. Tefera" },
+  { question: "Who was my favorite teacher?", options: ["Mr. Anwar", "Ms. Sarah", "Mr. Lee"], answer: "Mr. Anwar" },
+  { question: "What grade am I in?", options: ["7th grade", "8th grade", "9th grade"], answer: "8th grade" },
+];
+
+export default function TriviaGame() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [score, setScore] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [showResult, setShowResult] = useState(false);
+
+  const handleAnswer = () => {
+    if (selectedOption === questions[currentQuestion].answer) {
+      setScore(score + 1);
+    }
+    if (currentQuestion + 1 < questions.length) {
+      setCurrentQuestion(currentQuestion + 1);
+      setSelectedOption(null);
+    } else {
+      setShowResult(true);
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center gap-4 p-4">
+      {!showResult ? (
+        <Card className="p-4 w-96 text-center">
+          <CardContent>
+            <h2 className="text-lg font-bold">{questions[currentQuestion].question}</h2>
+            <div className="mt-4 flex flex-col gap-2">
+              {questions[currentQuestion].options.map((option) => (
+                <Button
+                  key={option}
+                  onClick={() => setSelectedOption(option)}
+                  className={
+                    selectedOption === option ? "bg-blue-500 text-white" : "bg-gray-200"
+                  }
+                >
+                  {option}
+                </Button>
+              ))}
+            </div>
+            <Button
+              className="mt-4 bg-green-500 text-white"
+              onClick={handleAnswer}
+              disabled={!selectedOption}
+            >
+              Submit
+            </Button>
+          </CardContent>
+        </Card>
+      ) : (
+        <Card className="p-4 w-96 text-center">
+          <CardContent>
+            <h2 className="text-lg font-bold">Game Over!</h2>
+            <p className="mt-2">Your score: {score}/{questions.length}</p>
+          </CardContent>
+        </Card>
+      )}
+    </div>
+  );
+}
