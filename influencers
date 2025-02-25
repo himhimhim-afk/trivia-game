@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameSphere - Your Gaming Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <h1>GameSphere</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#forum">Forum</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Welcome to GameSphere</h2>
+      <p>Your ultimate destination for gaming news, reviews, and community.</p>
+      <a href="#news" class="btn">Explore Now</a>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section id="news" class="news">
+    <h2>Latest News</h2>
+    <div class="news-grid">
+      <div class="news-item">
+        <img src="images/game1.jpg" alt="Game 1">
+        <h3>New Game Release: Cyber Odyssey</h3>
+        <p>Check out the latest open-world RPG that's taking the gaming world by storm.</p>
+      </div>
+      <div class="news-item">
+        <img src="images/game2.jpg" alt="Game 2">
+        <h3>Upcoming Esports Tournament</h3>
+        <p>Register now for the biggest Valorant tournament of the year.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="reviews">
+    <h2>Game Reviews</h2>
+    <div class="reviews-grid">
+      <div class="review-item">
+        <h3>Cyber Odyssey</h3>
+        <p>Rating: 9/10</p>
+        <p>A masterpiece in storytelling and gameplay.</p>
+      </div>
+      <div class="review-item">
+        <h3>Valorant</h3>
+        <p>Rating: 8.5/10</p>
+        <p>Fast-paced and competitive, perfect for FPS fans.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Forum Section -->
+  <section id="forum" class="forum">
+    <h2>Community Forum</h2>
+    <div class="forum-posts">
+      <div class="post">
+        <h3>Best Games of 2023?</h3>
+        <p>What are your top picks for this year?</p>
+      </div>
+      <div class="post">
+        <h3>Looking for Squad Members</h3>
+        <p>Anyone want to team up for Apex Legends?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 GameSphere. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
